@@ -20,7 +20,7 @@ public class VencimentoDescontoService {
 		return repository.findAll();
 	}
 	
-	public VencimentoDesconto findById(Integer id) {
+	public VencimentoDesconto findById(String id) {
 		Optional<VencimentoDesconto> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}

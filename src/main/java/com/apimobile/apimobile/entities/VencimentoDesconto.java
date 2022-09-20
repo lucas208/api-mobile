@@ -28,15 +28,14 @@ public class VencimentoDesconto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
     private String codigo;
+
     private String descricao;
     private BigDecimal valor;
+    private String tipo;
 
     @JsonFormat(pattern = "MM/yyyy")
-    private LocalDate competencia;
+    private LocalDate referencia;
 
     @ManyToOne
 	@JoinColumn(name = "vinculo_id")

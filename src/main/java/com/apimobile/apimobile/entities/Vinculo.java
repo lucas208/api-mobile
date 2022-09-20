@@ -34,24 +34,15 @@ public class Vinculo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "data_nomeacao")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-	private LocalDate dataNomeacao;
+	private String orgao;
 
-	@Column(name = "data_posse")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-	private LocalDate dataPosse;
+	private String setor;
 
-	@Column(name = "data_exercicio")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-	private LocalDate dataExercicio;
+	@Column(name = "codigo_cargo")
+    private String codigoCargo;
 
-	private String categoria;
-
-	@Column(name = "regime_juridico")
-	private String regimeJuridico;
-
-	private String tipo;
+	@Column(name = "descricao_cargo")
+	private String descricaoCargo;
 
 	@Column(name = "unidade_organizacional")
 	private String unidadeOrganizacional;

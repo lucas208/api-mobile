@@ -37,9 +37,6 @@ public class Servidor implements Serializable {
     @Column(unique = true)
     private String matricula;
 
-    @Column(name = "dados_bancarios")
-    private String dadosBancarios;
-
     @OneToMany(mappedBy = "servidor")
     private List<Vinculo> vinculos = new ArrayList<>();
 

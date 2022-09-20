@@ -24,7 +24,7 @@ public class VencimentoDescontoController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<VencimentoDesconto> findById(@PathVariable Integer id){
+	public ResponseEntity<VencimentoDesconto> findById(@PathVariable String id){
 		VencimentoDesconto obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
