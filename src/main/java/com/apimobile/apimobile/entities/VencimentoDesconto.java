@@ -39,6 +39,6 @@ public class VencimentoDesconto implements Serializable {
 
     @ManyToOne
 	@JoinColumn(name = "vinculo_id")
-	private Vinculo vinculo;
+	private Snapshot snapshot;
 
 }

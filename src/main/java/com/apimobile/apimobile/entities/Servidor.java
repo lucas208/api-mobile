@@ -1,15 +1,13 @@
 package com.apimobile.apimobile.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -37,17 +35,7 @@ public class Servidor implements Serializable {
     @Column(unique = true)
     private String matricula;
 
-    @OneToMany(mappedBy = "servidor")
-    private List<Vinculo> vinculos = new ArrayList<>();
-
-    public void addVinculo(Vinculo novoVinculo) {
-		vinculos.add(novoVinculo);
-		novoVinculo.setServidor(this);
-	}
-
-	public void removeVinculo(Vinculo removeVinculo) {
-		vinculos.remove(removeVinculo);
-		removeVinculo.setServidor(null);
-	}
+    @OneToOne(mappedBy = "servidor")
+    private Vinculo vinculo;
     
 }
