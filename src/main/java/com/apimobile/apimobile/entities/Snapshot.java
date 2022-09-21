@@ -2,11 +2,14 @@ package com.apimobile.apimobile.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -54,7 +57,7 @@ public class Snapshot implements Serializable {
     @JsonFormat(pattern = "MM/yyyy")
     private LocalDate referencia;
 
-    @OneToMany(mappedBy = "snapshot")
+    @OneToMany(mappedBy = "snapshot", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<VencimentoDesconto> contracheque = new ArrayList<>();
 
     public void addVencimentoDesconto(VencimentoDesconto novo) {
@@ -67,5 +70,19 @@ public class Snapshot implements Serializable {
 		alvo.setSnapshot(null);
 	}
 
-    
+  public Snapshot(Integer vinculoId, String servidorNome, String servidorCpf, String servidorMatricula,
+      String vinculoOrgao, String vinculoSetor, String vinculoCodigoCargo, String vinculoDescricaoCargo,
+      String vinculoUnidadeOrganizacional, String referencia) {
+    this.vinculoId = vinculoId;
+    this.servidorNome = servidorNome;
+    this.servidorCpf = servidorCpf;
+    this.servidorMatricula = servidorMatricula;
+    this.vinculoOrgao = vinculoOrgao;
+    this.vinculoSetor = vinculoSetor;
+    this.vinculoCodigoCargo = vinculoCodigoCargo;
+    this.vinculoDescricaoCargo = vinculoDescricaoCargo;
+    this.vinculoUnidadeOrganizacional = vinculoUnidadeOrganizacional;
+    this.referencia = LocalDate.parse(referencia, DateTimeFormatter.ofPattern("MM-yyyy"));
+    this.contracheque = new ArrayList<>();
+  }
 }
