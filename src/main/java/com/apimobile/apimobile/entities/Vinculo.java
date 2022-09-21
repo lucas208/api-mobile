@@ -43,6 +43,15 @@ public class Vinculo implements Serializable {
 
 	@OneToOne
     @JoinColumn(name = "servidor_id")
-    private Servidor servidor;
+	private Servidor servidor;
 
+	public Vinculo(String orgao, String setor, String codigoCargo, String descricaoCargo, String unidadeOrganizacional,
+			Servidor servidor) {
+		this.orgao = orgao;
+		this.setor = setor;
+		this.codigoCargo = codigoCargo;
+		this.descricaoCargo = descricaoCargo;
+		this.unidadeOrganizacional = unidadeOrganizacional;
+		this.servidor = servidor;
+	}
 }

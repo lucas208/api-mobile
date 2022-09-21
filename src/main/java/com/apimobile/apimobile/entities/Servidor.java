@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,7 +37,13 @@ public class Servidor implements Serializable {
     @Column(unique = true)
     private String matricula;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "servidor")
     private Vinculo vinculo;
-    
+
+    public Servidor(String nome, String cpf, String matricula) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.matricula = matricula;
+    }
 }

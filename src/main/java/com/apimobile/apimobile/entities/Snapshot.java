@@ -57,7 +57,7 @@ public class Snapshot implements Serializable {
     @JsonFormat(pattern = "MM/yyyy")
     private LocalDate referencia;
 
-    @OneToMany(mappedBy = "snapshot", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "snapshot", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<VencimentoDesconto> contracheque = new ArrayList<>();
 
     public void addVencimentoDesconto(VencimentoDesconto novo) {
@@ -82,7 +82,7 @@ public class Snapshot implements Serializable {
     this.vinculoCodigoCargo = vinculoCodigoCargo;
     this.vinculoDescricaoCargo = vinculoDescricaoCargo;
     this.vinculoUnidadeOrganizacional = vinculoUnidadeOrganizacional;
-    this.referencia = LocalDate.parse(referencia, DateTimeFormatter.ofPattern("MM-yyyy"));
+    this.referencia = LocalDate.parse(referencia, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     this.contracheque = new ArrayList<>();
   }
 }

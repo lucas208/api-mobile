@@ -2,6 +2,7 @@ package com.apimobile.apimobile.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import com.apimobile.apimobile.services.ServidorService;
 @RequestMapping(value = "/servidores")
 public class ServidorController {
     
+	@Autowired
     private ServidorService service;
 
     @GetMapping
