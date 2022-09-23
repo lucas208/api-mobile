@@ -1,5 +1,6 @@
 package com.apimobile.apimobile.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,5 +24,9 @@ public class VencimentoDescontoService {
 	public VencimentoDesconto findById(String id) {
 		Optional<VencimentoDesconto> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
+	}
+
+	public List<VencimentoDesconto> buscarContrachequeByReferencia(Integer vinculoId, LocalDate inicio, LocalDate fim) {
+		return repository.buscarContrachequeByReferencia(vinculoId,inicio,fim);
 	}
 }

@@ -51,6 +51,18 @@ public class ApimobileApplication {
 		snapshot.addVencimentoDesconto(new VencimentoDesconto("343","Auxílio alimentação", new BigDecimal("800.00"),"Vantagem","01-01-2022"));
 		snapshot.addVencimentoDesconto(new VencimentoDesconto("502","Imposto de Renda", new BigDecimal("450.00"),"Desconto","01-01-2022"));
 		snapshot.addVencimentoDesconto(new VencimentoDesconto("543","IPE", new BigDecimal("600.00"),"Desconto","01-01-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("001","Vencimento", new BigDecimal("4000.00"),"Vantagem","01-02-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("343","Auxílio alimentação", new BigDecimal("800.00"),"Vantagem","01-02-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("502","Imposto de Renda", new BigDecimal("450.00"),"Desconto","01-02-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("543","IPE", new BigDecimal("600.00"),"Desconto","01-02-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("001","Vencimento", new BigDecimal("4000.00"),"Vantagem","01-03-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("343","Auxílio alimentação", new BigDecimal("800.00"),"Vantagem","01-03-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("502","Imposto de Renda", new BigDecimal("450.00"),"Desconto","01-03-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("543","IPE", new BigDecimal("600.00"),"Desconto","01-03-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("001","Vencimento", new BigDecimal("4000.00"),"Vantagem","01-04-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("343","Auxílio alimentação", new BigDecimal("800.00"),"Vantagem","01-04-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("502","Imposto de Renda", new BigDecimal("450.00"),"Desconto","01-04-2022"));
+		snapshot.addVencimentoDesconto(new VencimentoDesconto("543","IPE", new BigDecimal("600.00"),"Desconto","01-04-2022"));
 
 		snapshotRepository.saveAll(snapshots);
 		
